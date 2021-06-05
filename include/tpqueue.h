@@ -4,8 +4,28 @@
 #include <cassert>
 
 template<typename T>
-class TPQueue {
-  // Сюда помещается описание структуры "Очередь с приоритетами"
+class TPQueue { 
+ public: 
+  TPQueue() :tail(nullptr), head(nullptr) {}
+  ~TPQueue() {
+    while (head)
+      pop();
+  }
+ private:
+  struct ITEM { 
+    T data;
+    ITEM* next;
+    ITEM* prev;
+  };
+  ITEM* head;
+  ITEM* tail;
+  TPQueue::ITEM* create(const T& data, ITEM*prev) {
+    item->prev = prev;
+    item->data = data;
+    ITEM* item = new ITEM;
+    item->next = nullptr;
+    return item;
+  }
 };
 
 struct SYM {
