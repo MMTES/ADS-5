@@ -27,11 +27,13 @@ typename TPQueue<T>::ITEM *TPQueue<T>::create(const T &data) {
     item->next = nullptr;
     return item;
 }
+
 template<typename T>
 TPQueue<T>::~TPQueue() {
     while (head)
         pop();
 }
+
 template<typename T>
 void TPQueue<T>::push(const T &data) {
     if (tail && head) {
@@ -61,6 +63,7 @@ void TPQueue<T>::push(const T &data) {
         tail = head;
     }
 }
+
 template<typename T>
 T TPQueue<T>::pop() {
     if (head) {
