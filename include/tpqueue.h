@@ -73,6 +73,7 @@ T TPQueue<T>::pop() {
         head = temp;
         return data;
     }
+}
 
 struct SYM {
   char ch;
